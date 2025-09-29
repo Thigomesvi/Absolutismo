@@ -3,6 +3,40 @@ def calculadora():
 def media_notas():
 
 def bonificacao_rh():
+    def bonificacao_rh():
+    while True:
+        try:
+            print("\n--- Bonificação do RH ---")
+            salario = float(input("Digite o salário do funcionário: R$ "))
+            if salario < 0:
+                print("Salário não pode ser negativo.")
+                continue
+
+            bonificacao = 0
+            if salario < 5000:
+                bonificacao = 1000
+            elif salario < 7000:
+                bonificacao = 650
+
+            salario_final = salario + bonificacao
+            print(f"Salário original: R$ {salario:.2f}")
+            print(f"Bonificação: R$ {bonificacao:.2f}")
+            print(f"Salário final: R$ {salario_final:.2f}")
+
+        except ValueError:
+            print("Erro: Digite um valor numérico válido para o salário.")
+            continue
+
+        while True:
+            continuar = input("\nDeseja calcular outra bonificação? (s/n): ").strip().lower()
+            if continuar == 's':
+                break
+            elif continuar == 'n':
+                return
+            else:
+                print("Opção inválida! Digite 's' para sim ou 'n' para não.")
+
+
 
 def comissao_vendas():
 
